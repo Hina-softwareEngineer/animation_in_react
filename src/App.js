@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import useWebAnimations from "@wellyshen/use-web-animations";
-import { render } from "@testing-library/react";
+// import useWebAnimations from "@wellyshen/use-web-animations";
+// import { render } from "@testing-library/react";
 import woman from "./image/woman1.gif";
+import man from "./image/man.gif";
+import manRunning from "./image/man4.gif";
 // import scene from "./image/scene.svg";
 
 function App() {
@@ -10,30 +12,87 @@ function App() {
     let buildings = document.getElementById("buildings");
     let clouds = document.getElementById("clouds");
     let smallCar = document.getElementById("smallCar");
-
-    let keyframe = [
-      { transform: "translate(1300px)" }, // Move by 500px
-      { transform: "translate(0px)" }, // Go through three colors
-    ];
-    let timing = {
-      delay: 500, // Start with a 500ms delay
-      duration: 10000, // Run for 1000ms
-      iterations: Infinity, // Repeat once
-      // Run the animation forwards and then backwards
-      easing: "linear", // Use a fancy timing function
-    }; // Go through three colors
+    let woman = document.querySelector(".woman");
+    let man = document.querySelector(".man");
+    let running = document.querySelector(".running");
+    let grass = document.getElementById("grass");
+    let sun = document.getElementById("sun");
 
     buildings.animate(
-      [{ transform: "translate(1300px)" }, { transform: "translate(0px)" }],
+      [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
+      {
+        delay: 0,
+        duration: 20000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+    clouds.animate(
+      [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
       {
         delay: 500,
+        duration: 12000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+    smallCar.animate(
+      [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
+      {
+        delay: 50,
+        duration: 8000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+    woman.animate(
+      [{ transform: "translate(1000px)" }, { transform: "translate(-1600px)" }],
+      {
+        delay: 50,
+        duration: 18000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+    man.animate(
+      [{ transform: "translate(-1300px)" }, { transform: "translate(1400px)" }],
+      {
+        delay: 200,
         duration: 10000,
         iterations: Infinity,
         easing: "linear",
       }
     );
-    clouds.animate(keyframe, timing);
-    smallCar.animate(keyframe, timing);
+    running.animate(
+      [{ transform: "translate(-1300px)" }, { transform: "translate(1400px)" }],
+      {
+        delay: 200,
+        duration: 10010,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+
+    grass.animate(
+      [{ transform: "translate(1300px)" }, { transform: "translate(-1400px)" }],
+      {
+        delay: 50,
+        duration: 22000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+
+    sun.animate(
+      [{ transform: "rotate(360deg)" }, { transform: "rotate(360deg)" }],
+      {
+        delay: 200,
+        duration: 1000,
+        iterations: Infinity,
+        direction: "alternate-reverse",
+        easing: "linear",
+      }
+    );
   }, []);
 
   return (
@@ -43,7 +102,7 @@ function App() {
           className="cars"
           dangerouslySetInnerHTML={{
             __html:
-              '<svg width="1500" height="780" viewBox="0 0 1500 780" fill="none" xmlns="http://www.w3.org/2000/svg">\
+              '<svg width="1500px" height="780" viewBox="0 0 1500 780" fill="none" xmlns="http://www.w3.org/2000/svg">\
           <g id="Desktop - 1" clip-path="url(#clip0)">\
           <rect width="1480" height="760" fill="white"/>\
           <g id="scene">\
@@ -358,6 +417,13 @@ function App() {
 
       <div className="woman">
         <img src={woman} alt="woman is walking" />
+      </div>
+      <div className="man">
+        <img src={man} alt="woman is walking" />
+      </div>
+
+      <div className="running">
+        <img src={manRunning} alt="woman is walking" />
       </div>
     </div>
   );

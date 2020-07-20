@@ -1,22 +1,12 @@
-/* .App {
-  width: 100%;
-  height: 100%;
-}
-
-.App span {
-  width: inherit;
-  height: inherit;
-}
-
-#buildings {
-  background-repeat: repeat-x;
-  width: 100%;
-} */
 .build {
   position: absolute;
   top: 0;
   left: 0;
   background-color: transparent;
+}
+
+.App {
+  overflow: hidden;
 }
 
 .bigcars,
@@ -34,7 +24,33 @@
   height: 300px;
 }
 
-.woman > img {
+#sun {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.man {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+}
+.running {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 300px;
+}
+
+.woman > img,
+.man > img,
+.running > img {
   width: inherit;
   height: inherit;
+}
+
+.woman > img {
+  transform: scale(1.2);
 }
