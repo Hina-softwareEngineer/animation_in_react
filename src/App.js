@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "./App.css";
-// import useWebAnimations from "@wellyshen/use-web-animations";
-// import { render } from "@testing-library/react";
 import woman from "./image/woman1.gif";
 import man from "./image/man.gif";
 import manRunning from "./image/man4.gif";
-// import scene from "./image/scene.svg";
+import birdsFlying from "./image/birds.gif";
+import eagles from "./image/birds2.gif";
+import banglow from "./image/birds3.gif";
 
 function App() {
   useEffect(() => {
@@ -17,12 +17,15 @@ function App() {
     let running = document.querySelector(".running");
     let grass = document.getElementById("grass");
     let sun = document.getElementById("sun");
+    let eagles = document.querySelector(".eagles");
+    let bung = document.querySelector(".bungalow");
+    let sparrow = document.querySelector(".sparrow");
 
     buildings.animate(
-      [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
+      [{ transform: "translate(1420px)" }, { transform: "translate(-1500px)" }],
       {
         delay: 0,
-        duration: 20000,
+        duration: 40000,
         iterations: Infinity,
         easing: "linear",
       }
@@ -39,7 +42,7 @@ function App() {
     smallCar.animate(
       [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
       {
-        delay: 50,
+        delay: 0,
         duration: 8000,
         iterations: Infinity,
         easing: "linear",
@@ -90,6 +93,48 @@ function App() {
         duration: 1000,
         iterations: Infinity,
         direction: "alternate-reverse",
+        easing: "linear",
+      }
+    );
+
+    eagles.animate(
+      [
+        { transform: "translateX(1400px)" },
+        { transform: "translateX(-1400px)" },
+      ],
+      {
+        delay: 150,
+        duration: 14000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+
+    bung.animate(
+      [
+        { transform: "translateX(-1400px)" },
+        { transform: "translateX(1300px)" },
+      ],
+      {
+        delay: 200,
+        duration: 14000,
+        iterations: Infinity,
+        easing: "linear",
+      }
+    );
+
+    sparrow.animate(
+      [
+        {
+          transform: "translateX(1400px)",
+          opacity: 1,
+        },
+        { transform: "translateX(-1400px)", opacity: 1 },
+      ],
+      {
+        delay: 5000,
+        duration: 14000,
+        iterations: Infinity,
         easing: "linear",
       }
     );
@@ -424,6 +469,18 @@ function App() {
 
       <div className="running">
         <img src={manRunning} alt="woman is walking" />
+      </div>
+
+      <div className="bungalow">
+        <img src={banglow} alt="woman is walking" />
+      </div>
+
+      <div className="sparrow">
+        <img src={birdsFlying} alt="woman is walking" />
+      </div>
+
+      <div className="eagles">
+        <img src={eagles} alt="woman is walking" />
       </div>
     </div>
   );

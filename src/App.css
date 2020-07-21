@@ -54,3 +54,24 @@
 .woman > img {
   transform: scale(1.2);
 }
+
+.bungalow {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.eagles,
+.sparrow {
+  position: absolute;
+  top: -70px;
+  right: 0;
+}
+.sparrow {
+  opacity: 0;
+}
+
+.bungalow > img {
+  width: 150px;
+  height: 150px;
+}
