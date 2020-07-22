@@ -9,6 +9,7 @@ import banglow from "./image/birds3.gif";
 
 function App() {
   useEffect(() => {
+    alert("By clicking on the red Car, you can increase the speed.");
     let buildings = document.getElementById("buildings");
     let clouds = document.getElementById("clouds");
     let smallCar = document.getElementById("smallCar");
@@ -20,8 +21,9 @@ function App() {
     let eagles = document.querySelector(".eagles");
     let bung = document.querySelector(".bungalow");
     let sparrow = document.querySelector(".sparrow");
+    let bigCar = document.getElementById("bigCar");
 
-    buildings.animate(
+    let animation = buildings.animate(
       [{ transform: "translate(1420px)" }, { transform: "translate(-1500px)" }],
       {
         delay: 0,
@@ -30,7 +32,7 @@ function App() {
         easing: "linear",
       }
     );
-    clouds.animate(
+    let cloud = clouds.animate(
       [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
       {
         delay: 500,
@@ -39,7 +41,7 @@ function App() {
         easing: "linear",
       }
     );
-    smallCar.animate(
+    let smallcar = smallCar.animate(
       [{ transform: "translate(1300px)" }, { transform: "translate(-1300px)" }],
       {
         delay: 0,
@@ -48,7 +50,7 @@ function App() {
         easing: "linear",
       }
     );
-    woman.animate(
+    let womanGirl = woman.animate(
       [{ transform: "translate(1000px)" }, { transform: "translate(-1600px)" }],
       {
         delay: 50,
@@ -57,7 +59,7 @@ function App() {
         easing: "linear",
       }
     );
-    man.animate(
+    let manBoy = man.animate(
       [{ transform: "translate(-1300px)" }, { transform: "translate(1400px)" }],
       {
         delay: 200,
@@ -66,7 +68,7 @@ function App() {
         easing: "linear",
       }
     );
-    running.animate(
+    let RunningPeople = running.animate(
       [{ transform: "translate(-1300px)" }, { transform: "translate(1400px)" }],
       {
         delay: 200,
@@ -76,7 +78,7 @@ function App() {
       }
     );
 
-    grass.animate(
+    let g = grass.animate(
       [{ transform: "translate(1300px)" }, { transform: "translate(-1400px)" }],
       {
         delay: 50,
@@ -86,7 +88,7 @@ function App() {
       }
     );
 
-    sun.animate(
+    let s = sun.animate(
       [{ transform: "rotate(360deg)" }, { transform: "rotate(360deg)" }],
       {
         delay: 200,
@@ -97,7 +99,7 @@ function App() {
       }
     );
 
-    eagles.animate(
+    let e = eagles.animate(
       [
         { transform: "translateX(1400px)" },
         { transform: "translateX(-1400px)" },
@@ -110,7 +112,7 @@ function App() {
       }
     );
 
-    bung.animate(
+    let b = bung.animate(
       [
         { transform: "translateX(-1400px)" },
         { transform: "translateX(1300px)" },
@@ -123,7 +125,7 @@ function App() {
       }
     );
 
-    sparrow.animate(
+    let sp = sparrow.animate(
       [
         {
           transform: "translateX(1400px)",
@@ -138,6 +140,33 @@ function App() {
         easing: "linear",
       }
     );
+
+    bigCar.addEventListener("click", function () {
+      console.log(animation.playbackRate, "first");
+      animation.updatePlaybackRate(animation.playbackRate * 1.2);
+      b.updatePlaybackRate(b.playbackRate * 1.05);
+      e.updatePlaybackRate(e.playbackRate * 1.02);
+      womanGirl.updatePlaybackRate(womanGirl.playbackRate * 1.02);
+      manBoy.updatePlaybackRate(manBoy.playbackRate * 1.02);
+      RunningPeople.updatePlaybackRate(RunningPeople.playbackRate * 1.02);
+      g.updatePlaybackRate(g.playbackRate * 1.1);
+      sp.updatePlaybackRate(s.playbackRate * 1.02);
+      smallcar.updatePlaybackRate(smallcar.playbackRate * 1.1);
+      cloud.updatePlaybackRate(cloud.playbackRate * 1.05);
+      console.log(animation.playbackRate, "end");
+      if (animation.playbackRate > 12) {
+        animation.updatePlaybackRate(1);
+        b.updatePlaybackRate(1);
+        e.updatePlaybackRate(1);
+        womanGirl.updatePlaybackRate(1);
+        manBoy.updatePlaybackRate(1);
+        RunningPeople.updatePlaybackRate(1);
+        g.updatePlaybackRate(1);
+        sp.updatePlaybackRate(1);
+        smallcar.updatePlaybackRate(1);
+        cloud.updatePlaybackRate(1);
+      }
+    });
   }, []);
 
   return (
