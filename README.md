@@ -4,9 +4,9 @@
 
 > By clicking the Red Car, you can increase the Speed.
 
-🔘 Video :
+🔘 Gif :
 
-![City scene Showing](./gif/anim.mp4)
+![City scene Showing](./gif/animation.gif)
 
 👩‍💻 HINA KHADIM 🇵🇰 🇵🇰
 
