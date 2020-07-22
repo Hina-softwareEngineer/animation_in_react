@@ -6,11 +6,7 @@
 
 🔘 Video :
 
-<video width="420" height="300" controls>
-  <source src="./anim.mp4" type="video/mp4">
-</video>
-
-![](./gif/anim.mp4)
+![City scene Showing](./gif/anim.mp4)
 
 👩‍💻 HINA KHADIM 🇵🇰 🇵🇰
 
